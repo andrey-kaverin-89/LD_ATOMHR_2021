@@ -1,5 +1,5 @@
 import time
-from atom_config import db
+from atomhr_config import db
 
 class User(db.Model):
     user_id         = db.Column(db.Integer, primary_key=True)
