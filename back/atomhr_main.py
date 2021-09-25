@@ -81,7 +81,7 @@ def uploadfile():
                        action = 'uploadfile',
                        status='error'), 500
 
-# Upload endpoint and response columns
+# Get feature importances
 @app.route(url_base+'v1/get_feature_importances',  methods=['GET'])
 # Using for DEBUGGING. Uncomment below.
 # @jwt_required()
@@ -117,7 +117,7 @@ def get_feature_importances():
                        action = 'get_feature_importances',
                        status='error'), 500
 
-# Upload endpoint and response columns
+# Get prediction
 @app.route(url_base+'v1/get_prediction',  methods=['GET'])
 # Using for DEBUGGING. Uncomment below.
 # @jwt_required()
