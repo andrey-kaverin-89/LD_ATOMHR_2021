@@ -34,6 +34,47 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "upload file",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/hivetyrant/python_scripts/LD_rosatom_HR/ds_atom.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{API_ADDRESS}}/atom/api/v1/uploadfile",
+					"protocol": "https",
+					"host": [
+						"{{API_ADDRESS}}"
+					],
+					"path": [
+						"atom",
+						"api",
+						"v1",
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [

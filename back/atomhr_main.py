@@ -34,14 +34,14 @@ def auth():
                    action = 'auth',
                    status='ok'), 200
 
-# Upload endpoint and responce columns
+# Upload endpoint and response columns
 @app.route(url_base+'v1/uploadfile',  methods=['POST'])
 # Using for DEBUGGING. Uncomment below.
 # @jwt_required()
 def uploadfile():
     try:
         # Upload file from front-end
-        dset = pd.read_excel(request.files.get('file', None).stream, sheet_name='1', skiprows=2, index_col='ID')
+        dset = pd.read_excel(request.files.get('file', None), sheet_name='1', skiprows=2, index_col='ID')
         # Some magic...
         result = [{'name':x[0],'type':'num'} 
                 if (x[1] == np.dtype('int')) or (x[1] == np.dtype('float'))
@@ -50,10 +50,13 @@ def uploadfile():
         return jsonify(result = {'columns':result},
                     action = 'uploadfile',
                     status='ok'), 200
-    except:        
+    # for DEBUGGING
+    # except Exception as e:
+        # return jsonify(result = {'error':e},
+    except:
         return jsonify(result = {'error':'something went wrong'},
-                    action = 'uploadfile',
-                    status='error'), 500
+                       action = 'uploadfile',
+                       status='error'), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, ssl_context='adhoc')
