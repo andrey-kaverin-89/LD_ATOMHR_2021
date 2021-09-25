@@ -75,6 +75,113 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "get feature importances",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"gender\",\"absence\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{API_ADDRESS}}/atom/api/v1/get_feature_importances",
+					"protocol": "https",
+					"host": [
+						"{{API_ADDRESS}}"
+					],
+					"path": [
+						"atom",
+						"api",
+						"v1",
+						"get_feature_importances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get predict",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":23854408}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{API_ADDRESS}}/atom/api/v1/get_prediction",
+					"protocol": "https",
+					"host": [
+						"{{API_ADDRESS}}"
+					],
+					"path": [
+						"atom",
+						"api",
+						"v1",
+						"get_prediction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{API_ADDRESS}}/atom/api/v1/ping",
+					"protocol": "https",
+					"host": [
+						"{{API_ADDRESS}}"
+					],
+					"path": [
+						"atom",
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
