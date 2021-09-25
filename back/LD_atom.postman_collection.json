@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "68ee455c-96be-4a40-a9e8-dcd35a3731a8",
+		"name": "LD_atom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"lol\",\n \"password\":\"kek\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{API_ADDRESS}}/atom/api/v1/auth",
+					"protocol": "https",
+					"host": [
+						"{{API_ADDRESS}}"
+					],
+					"path": [
+						"atom",
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_ADDRESS",
+			"value": "0.0.0.0:5000"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzMjUyODUwNSwianRpIjoiMDkwZGY2ZDktNTY4Zi00ZDUzLTg5MDctMzEwYTcwMDQ5Y2IzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjMyNTI4NTA1LCJleHAiOjE2MzI1NjQ1MDV9.NWfuQZf-8Kt8rEIo-fTnY2wBNQj7s6w50gl1RD344Tg"
+		}
+	]
+}
