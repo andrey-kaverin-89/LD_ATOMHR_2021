@@ -1,5 +1,5 @@
 # Universal imports
-import requests, json, time, datetime, re, hashlib
+import requests, json, time, datetime, re, hashlib, pickle
 import pandas as pd, numpy as np
 # Sklearn import for feature importances
 from sklearn.model_selection import train_test_split
@@ -115,6 +115,30 @@ def get_feature_importances():
     except:
         return jsonify(result = {'error':'something went wrong'},
                        action = 'get_feature_importances',
+                       status='error'), 500
+
+# Upload endpoint and response columns
+@app.route(url_base+'v1/get_prediction',  methods=['GET'])
+# Using for DEBUGGING. Uncomment below.
+# @jwt_required()
+def get_prediction():
+    try:
+        id_pred = request.json.get('id',None)
+        # Get data from database
+        dset = orm.Employee.query.filter(orm.Employee.id == id_pred).first()
+        # Get prediction from model in pickle
+        with open('SVC.pickle','rb') as f:
+            model = pickle.loads(f.read())
+        result = model.predict(pd.DataFrame(dset.serialize))
+        return jsonify(result = {'chance':result},
+                    action = 'get_prediction',
+                    status='ok'), 200
+    # for DEBUGGING
+    # except Exception as e:
+        # return jsonify(result = {'error':e},
+    except:
+        return jsonify(result = {'error':'something went wrong'},
+                       action = 'get_prediction',
                        status='error'), 500
 
 if __name__ == '__main__':
