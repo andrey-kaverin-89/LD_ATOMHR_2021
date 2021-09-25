@@ -38,7 +38,7 @@ def auth():
 @app.route(url_base+'v1/uploadfile',  methods=['POST'])
 # Using for DEBUGGING. Uncomment below.
 # @jwt_required()
-def auth():
+def uploadfile():
     try:
         # Upload file from front-end
         dset = pd.read_excel(request.files.get('file', None).stream, sheet_name='1', skiprows=2, index_col='ID')
