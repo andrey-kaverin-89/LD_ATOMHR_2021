@@ -42,5 +42,25 @@ class Employee(db.Model):
     layoff_month    = db.Column(db.Integer, unique=False, nullable=False)
     is_large_family = db.Column(db.Integer, unique=False, nullable=False)
     is_retiree      = db.Column(db.Integer, unique=False, nullable=False)
+    @property
+    def serialize(self):
+        return {
+            'position'        :self.position,
+            'gender'          :self.gender,
+            'marital_status'  :self.marital_status,
+            'job_stop'        :self.job_stop,
+            'absence'         :self.absence,
+            'absence_days'    :self.absence_days,
+            'salary'          :self.salary,
+            'city'            :self.city,
+            'children_num'    :self.children_num,
+            'age'             :self.age,
+            'has_mentor'      :self.has_mentor,
+            'experience'      :self.experience,
+            'job_start_month' :self.job_start_month,
+            'layoff_month'    :self.layoff_month,
+            'is_large_family' :self.is_large_family,
+            'is_retiree'      :self.is_retiree
+       }
     def __repr__(self):
         return '<Employee %r>' % self.id
