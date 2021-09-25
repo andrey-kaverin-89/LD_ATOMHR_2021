@@ -25,6 +25,11 @@ def apply_caching(response):
     response.headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token, Authorization'
     return response
 
+# Ping
+@app.route(url_base+'v1/ping',  methods=['GET'])
+def ping():
+    return 'pong'
+
 # Auth endpoint
 @app.route(url_base+'v1/auth',  methods=['POST'])
 def auth():
