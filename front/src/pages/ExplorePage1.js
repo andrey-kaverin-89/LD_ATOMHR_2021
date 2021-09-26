@@ -5,9 +5,9 @@ import { withRouter } from "react-router-dom";
 import ExploreQueryBuilder from "../components/QueryBuilder/ExploreQueryBuilder";
 import { GET_DASHBOARD_ITEM } from "../graphql/queries";
 import TitleModal from "../components/TitleModal.js";
-import { isQueryPresent } from "@cubejs-client/react";
-import PageHeader from "../components/PageHeader.js";
-import ExploreTitle from "../components/ExploreTitle.js";
+// import { isQueryPresent } from "@cubejs-client/react";
+// import PageHeader from "../components/PageHeader.js";
+// import ExploreTitle from "../components/ExploreTitle.js";
 
 const ExplorePage = withRouter(({ history, location }) => {
   const [addingToDashboard, setAddingToDashboard] = useState(false);
@@ -51,20 +51,20 @@ const ExplorePage = withRouter(({ history, location }) => {
         setTitle={setTitle}
         finalTitle={finalTitle}
       />
-      <PageHeader
-        title={<ExploreTitle itemId={itemId} />}
+      {/* <PageHeader
+        // title={<ExploreTitle itemId={itemId} />}
         button={
           <Button
             key="button"
             type="primary"
             loading={addingToDashboard}
-            disabled={!isQueryPresent(finalVizState.query || {})}
+            // disabled={!isQueryPresent(finalVizState.query || {})}
             onClick={() => setTitleModalVisible(true)}
           >
             {itemId ? "Update" : "Add to Dashboard"}
           </Button>
         }
-      />
+      /> */}
       <ExploreQueryBuilder
         vizState={finalVizState}
         setVizState={setVizState}

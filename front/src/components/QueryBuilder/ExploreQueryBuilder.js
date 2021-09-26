@@ -23,6 +23,7 @@ export default function ExploreQueryBuilder({
       wrapWithQueryRenderer={false}
       onVizStateChanged={onVizStateChanged}
       render={({
+        resultSet,
         validatedQuery,
         isQueryPresent,
         chartType,
@@ -211,6 +212,17 @@ export default function ExploreQueryBuilder({
                       }}
                       cubejsApi={cubejsApi}
                     />
+
+                    <small><pre>{JSON.stringify({
+                        query: validatedQuery,
+                        chartType,
+                        pivotConfig,
+                      }, true, "\t")}</pre></small>
+                      ----
+                    <small><pre>{JSON.stringify(
+                        resultSet
+                      , true, "\t")}</pre></small>
+
                   </Card>
                 ) : (
                   <h2

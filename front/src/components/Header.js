@@ -35,6 +35,9 @@ const Header = ({ location }) => (
         lineHeight: '64px',
       }}
     >
+      <Menu.Item key="/input">
+        <Link to="/input">Input</Link>
+      </Menu.Item>
       <Menu.Item key="/explore">
         <Link to="/explore">Explore</Link>
       </Menu.Item>
