@@ -5,6 +5,12 @@
 # Технологический стек
 python / mysql / react
 
+# Немного скирншотов
+
+![image](https://user-images.githubusercontent.com/76730043/134796936-e47f49ff-5c27-4118-8a2f-335f06fcaf18.png)
+
+![image](https://user-images.githubusercontent.com/76730043/134796943-acc1a24d-731a-4709-b480-a9237ac02415.png)
+
 # Содержимое
 
 Здесь существуют две папки:
