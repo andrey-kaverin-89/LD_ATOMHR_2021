@@ -45,7 +45,7 @@ front - сложен фронтэнд
 
 Команда для запуска:
 
-docker run -p 4000:4000 \ 
+  docker run -p 4000:4000 \ 
 
     -v ${PWD}:/cube/conf \ 
     
