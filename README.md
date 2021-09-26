@@ -45,13 +45,7 @@ front - сложен фронтэнд
 
 Команда для запуска:
 
-  docker run -p 4000:4000 \ 
-
-    -v ${PWD}:/cube/conf \ 
-    
-    -e CUBEJS_DEV_MODE=true \    
-    
-    cubejs/cube
+docker run -p 4000:4000 -v ${PWD}:/cube/conf -e CUBEJS_DEV_MODE=true cubejs/cube
 
 cube.js запускается на стандартных настройках с одним исключением - используется база mysql с вашими кредами
 
